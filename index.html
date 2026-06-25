@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redbeacon Asset Management — Grow and Protect What Matters</title>
+  <meta name="description" content="Redbeacon Asset Management — long-term wealth management for professionals and families. Wealth planning, retirement strategy, portfolio management and estate planning." />
+
+  <!-- ===========================================================
+       FormSubmit activation note:
+       The enquiry form posts to FormSubmit's AJAX endpoint (see script.js).
+       FormSubmit requires a ONE-TIME activation: the very first submission to a
+       new email address triggers a confirmation email. The form only delivers
+       messages AFTER you click the activation link in that email.
+       To change the destination address, edit ENDPOINT in script.js.
+       =========================================================== -->
+
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- ============================ NAVBAR ============================ -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#hero" aria-label="Redbeacon Asset Management home">
+        <span class="brand-mark" aria-hidden="true">
+          <!-- Small beacon / signal SVG mark -->
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v6" />
+            <path d="M5 9a7 7 0 0 1 14 0" />
+            <path d="M8.5 11.5 6 22" />
+            <path d="M15.5 11.5 18 22" />
+            <path d="M7.5 17h9" />
+          </svg>
+        </span>
+        <span class="brand-text">Redbeacon<span class="brand-sub">Asset Management</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-inner reveal">
+        <p class="hero-eyebrow">Private Wealth Advisory</p>
+        <h1 class="hero-title">Grow and protect<br />what matters most</h1>
+        <p class="hero-sub">
+          Thoughtful, independent guidance for professionals and families building
+          lasting wealth — measured strategy over fleeting trends.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+          <a href="#about" class="btn btn-ghost">Explore Our Services</a>
+        </div>
+      </div>
+
+      <!-- Trust stats -->
+      <div class="container hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num">$2B+</span>
+          <span class="stat-label">Assets advised</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Years of experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Client retention</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SERVICES / ABOUT ======================= -->
+    <section class="services" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">What we do</p>
+          <h2 class="section-title">A disciplined approach to lasting wealth</h2>
+          <p class="section-lede">
+            For more than two decades, Redbeacon has helped families and professionals
+            make confident decisions across every stage of life. We listen first, then
+            build a plan that is wholly yours.
+          </p>
+        </div>
+
+        <div class="cards">
+          <!-- Card 1 -->
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18" />
+                <path d="M7 15l3-4 3 2 4-6" />
+              </svg>
+            </span>
+            <h3 class="card-title">Wealth Planning</h3>
+            <p class="card-text">A clear, holistic roadmap aligning your assets with the life you intend to live.</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+            </span>
+            <h3 class="card-title">Retirement Strategy</h3>
+            <p class="card-text">Income you can count on, designed to sustain your lifestyle for decades to come.</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19V9l8-5 8 5v10" />
+                <path d="M9 19v-6h6v6" />
+              </svg>
+            </span>
+            <h3 class="card-title">Portfolio Management</h3>
+            <p class="card-text">Diversified, risk-aware portfolios stewarded with patience and rigour.</p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3 3 7v5c0 5 3.8 8 9 9 5.2-1 9-4 9-9V7l-9-4z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </span>
+            <h3 class="card-title">Estate Planning</h3>
+            <p class="card-text">Preserve and pass on your legacy with clarity, care, and confidence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= TESTIMONIALS ======================= -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">In their words</p>
+          <h2 class="section-title">Trusted across generations</h2>
+        </div>
+
+        <div class="carousel reveal" id="carousel" aria-roledescription="carousel" aria-label="Client testimonials">
+          <div class="carousel-viewport">
+            <ul class="carousel-track" id="carouselTrack">
+              <!-- Slide 1 -->
+              <li class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                <blockquote class="quote">
+                  <p>“Redbeacon gave us a plan we actually understand. For the first time
+                  in years, we feel genuinely in control of our future.”</p>
+                  <footer class="quote-by">
+                    <span class="avatar" aria-hidden="true">EM</span>
+                    <span class="by-meta">
+                      <span class="by-name">Eleanor &amp; Marcus Webb</span>
+                      <span class="by-role">Business Owners</span>
+                    </span>
+                  </footer>
+                </blockquote>
+              </li>
+              <!-- Slide 2 -->
+              <li class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                <blockquote class="quote">
+                  <p>“After 30 years in engineering, I wanted certainty, not sales pitches.
+                  Their calm, methodical guidance is exactly what I was looking for.”</p>
+                  <footer class="quote-by">
+                    <span class="avatar" aria-hidden="true">RP</span>
+                    <span class="by-meta">
+                      <span class="by-name">Raymond Patel</span>
+                      <span class="by-role">Retired Engineer</span>
+                    </span>
+                  </footer>
+                </blockquote>
+              </li>
+              <!-- Slide 3 -->
+              <li class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                <blockquote class="quote">
+                  <p>“They took the time to understand our family before recommending anything.
+                  That trust has made all the difference as our needs have grown.”</p>
+                  <footer class="quote-by">
+                    <span class="avatar" aria-hidden="true">SC</span>
+                    <span class="by-meta">
+                      <span class="by-name">Sophia Chen</span>
+                      <span class="by-role">Physician &amp; Parent</span>
+                    </span>
+                  </footer>
+                </blockquote>
+              </li>
+            </ul>
+          </div>
+
+          <button class="carousel-btn prev" id="prevBtn" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+          <button class="carousel-btn next" id="nextBtn" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+          </button>
+
+          <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose testimonial"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= ENQUIRY FORM ======================= -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-intro reveal">
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="section-title">Book a consultation</h2>
+          <p class="section-lede">
+            Tell us a little about your goals and we'll arrange a confidential,
+            no-obligation conversation. We typically respond within one business day.
+          </p>
+          <ul class="contact-points">
+            <li>Independent, fiduciary-minded advice</li>
+            <li>Personalised plans, never off-the-shelf</li>
+            <li>Discreet and confidential by default</li>
+          </ul>
+        </div>
+
+        <div class="form-wrap reveal">
+          <!-- novalidate: we handle validation in JS for consistent messaging -->
+          <form id="enquiryForm" class="enquiry-form" novalidate>
+            <!-- Honeypot: hidden from users, catches bots. Must stay empty. -->
+            <div class="honeypot" aria-hidden="true">
+              <label for="_honey">Leave this field empty</label>
+              <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" />
+              <span class="error-msg" id="err-name" role="alert"></span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" />
+                <span class="error-msg" id="err-email" role="alert"></span>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone <span class="optional">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="interest">Investment interest</label>
+              <select id="interest" name="interest">
+                <option value="Wealth Planning">Wealth Planning</option>
+                <option value="Retirement">Retirement</option>
+                <option value="Portfolio Management">Portfolio Management</option>
+                <option value="Estate Planning">Estate Planning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+              <span class="error-msg" id="err-message" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Send enquiry</button>
+
+            <!-- Live region for the overall form status -->
+            <p class="form-status" id="formError" role="alert" hidden></p>
+          </form>
+
+          <!-- Success message, revealed by JS after a successful submit -->
+          <div class="form-success" id="formSuccess" hidden>
+            <span class="success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M8 12l3 3 5-6" /></svg>
+            </span>
+            <h3>Thank you</h3>
+            <p>Thanks — we'll be in touch within one business day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-text footer-brand-text">Redbeacon<span class="brand-sub">Asset Management</span></span>
+        <p class="footer-tagline">Steady guidance for the long term.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="disclaimer">
+        This website is for informational purposes only and does not constitute financial advice.
+      </p>
+      <p class="copyright">&copy; <span id="year"></span> Redbeacon Asset Management. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
