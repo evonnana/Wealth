@@ -136,7 +136,7 @@
     // CHANGE THIS EMAIL to wherever enquiries should be delivered.
     // First submission to a new address triggers a one-time FormSubmit
     // activation email — the form only delivers AFTER you click that link.
-    const ENDPOINT = "https://formsubmit.co/ajax/evon.na@redbeaconam.com";
+    const ENDPOINT = "https://formsubmit.co/ajax/isaiah.hui@redbeaconam.com";
 
     const submitBtn = document.getElementById("submitBtn");
     const formError = document.getElementById("formError");
@@ -193,7 +193,7 @@
         phone: form.phone.value.trim(),
         interest: form.interest.value,
         message: form.message.value.trim(),
-        _subject: "New enquiry from Redbeacon website",
+        _subject: "New Wealth Blueprint request — Redbeacon website",
         _template: "table",
         _captcha: "false"
       };

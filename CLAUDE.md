@@ -51,7 +51,7 @@ the relevant module in `script.js`.
 
 - Submits via **FormSubmit AJAX** (`fetch` POST JSON) so the page never redirects. The destination
   address is the `ENDPOINT` constant at the top of the form module in `script.js` — currently
-  `evon.na@redbeaconam.com`. This is the single place to change the recipient.
+  `isaiah.hui@redbeaconam.com`. This is the single place to change the recipient.
 - FormSubmit requires a **one-time activation**: the first submission to a new address triggers a
   confirmation email; the form only delivers after that link is clicked.
 - The payload includes FormSubmit helper fields (`_subject`, `_template: "table"`, `_captcha: "false"`)

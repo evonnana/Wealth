@@ -5,17 +5,19 @@
 
 /* ----------------------- Design tokens ----------------------- */
 :root {
-  /* Palette */
-  --navy:   #0f1f3d;   /* primary deep navy */
-  --slate:  #1e2d4d;   /* secondary slate   */
-  --accent: #c2a15a;   /* muted gold accent — for a teal scheme, swap to #2f7e7e */
-  --accent-soft: rgba(194, 161, 90, 0.14);
-  --bg:     #f7f5f0;   /* off-white page background */
+  /* Palette — deep aubergine + vivid violet */
+  --navy:   #2a1747;   /* primary deep aubergine (dark surfaces, headings) */
+  --slate:  #3c2566;   /* secondary plum (mid-tone text, hovers)          */
+  --accent: #7c3aed;   /* vivid violet — CTAs and eyebrows on light bg    */
+  --accent-strong: #6d28d9; /* deeper violet for CTA hover                */
+  --accent-bright: #b9a3ff; /* lavender — accent legible on dark plum     */
+  --accent-soft: rgba(124, 58, 237, 0.12);
+  --bg:     #f6f4fb;   /* very light lavender page background */
   --surface:#ffffff;   /* card / panel surface */
-  --text:   #1c2433;   /* primary body text */
-  --muted:  #5d6577;   /* secondary text */
-  --line:   #e6e2d8;   /* hairline borders */
-  --navy-tint: #eef1f6;
+  --text:   #221a33;   /* primary body text */
+  --muted:  #6b6480;   /* secondary text */
+  --line:   #e7e3f3;   /* hairline borders */
+  --navy-tint: #f0ebfa; /* soft lavender band (testimonials) */
 
   /* Typography */
   --font-head: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -32,8 +34,8 @@
   /* Misc */
   --radius: 14px;
   --radius-sm: 9px;
-  --shadow-sm: 0 2px 10px rgba(15, 31, 61, 0.06);
-  --shadow-md: 0 14px 40px rgba(15, 31, 61, 0.10);
+  --shadow-sm: 0 2px 10px rgba(42, 23, 71, 0.07);
+  --shadow-md: 0 14px 40px rgba(42, 23, 71, 0.12);
   --container: 1180px;
   --header-h: 72px;
   --transition: 220ms ease;
@@ -130,10 +132,10 @@ p { margin: 0 0 var(--space-sm); }
 }
 .btn-primary {
   background: var(--accent);
-  color: var(--navy);
-  box-shadow: var(--shadow-sm);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.28);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: #cdae6a; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(124, 58, 237, 0.36); background: var(--accent-strong); }
 .btn-ghost {
   background: transparent;
   color: #fff;
@@ -178,7 +180,7 @@ p { margin: 0 0 var(--space-sm); }
   height: 40px;
   border-radius: 10px;
   background: var(--navy);
-  color: var(--accent);
+  color: var(--accent-bright);
 }
 .brand-text {
   display: flex;
@@ -260,9 +262,9 @@ p { margin: 0 0 var(--space-sm); }
   color: #fff;
   /* Layered gradient — no external imagery */
   background:
-    radial-gradient(1200px 600px at 78% -10%, rgba(194, 161, 90, 0.22), transparent 60%),
-    radial-gradient(900px 500px at 10% 110%, rgba(47, 126, 126, 0.18), transparent 55%),
-    linear-gradient(155deg, var(--navy) 0%, var(--slate) 70%, #243558 100%);
+    radial-gradient(1200px 600px at 78% -10%, rgba(124, 58, 237, 0.38), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(185, 163, 255, 0.20), transparent 55%),
+    linear-gradient(155deg, var(--navy) 0%, var(--slate) 68%, #4a2f7a 100%);
   overflow: hidden;
 }
 /* Subtle texture overlay */
@@ -291,6 +293,18 @@ p { margin: 0 0 var(--space-sm); }
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
 
+/* Trust microline under the hero CTAs — reassurance at the point of action */
+.hero-trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: var(--space-md) 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+.hero-trust .proof-stars { color: var(--accent-bright); letter-spacing: 0.1em; }
+
 .hero-stats {
   position: relative;
   display: flex;
@@ -305,7 +319,7 @@ p { margin: 0 0 var(--space-sm); }
   font-family: var(--font-head);
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-bright);
 }
 .stat-label {
   font-size: 0.9rem;
@@ -393,7 +407,7 @@ p { margin: 0 0 var(--space-sm); }
   height: 50px;
   border-radius: 50%;
   background: var(--navy);
-  color: var(--accent);
+  color: var(--accent-bright);
   font-weight: 600;
   letter-spacing: 0.04em;
   flex: none;
@@ -469,13 +483,111 @@ p { margin: 0 0 var(--space-sm); }
   background: var(--accent);
 }
 
+/* ----------------------- Lead magnet ----------------------- */
+.lead-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.7rem;
+  margin-bottom: var(--space-sm);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  border-radius: 999px;
+}
+.lead-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* "What you get" list — checkmarks signal value, not generic bullets */
+.value-list {
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: 0;
+}
+.value-list li {
+  position: relative;
+  padding-left: 2.1rem;
+  margin-bottom: 0.9rem;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.value-list li strong { color: var(--navy); font-weight: 600; }
+.value-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-soft)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l4 4 10-11'/%3E%3C/svg%3E")
+    center / 12px no-repeat;
+}
+
+/* Social-proof line under the offer headline */
+.proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: var(--space-md);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.proof strong { color: var(--navy); font-weight: 600; }
+.proof-stars { color: var(--accent); letter-spacing: 0.1em; font-size: 0.95rem; }
+
 .form-wrap {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: var(--space-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), 0 30px 60px -30px rgba(124, 58, 237, 0.45);
 }
+/* Signature: a violet gradient cap marks the card as the "prize" */
+.form-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -1px -1px auto -1px;
+  height: 5px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+}
+
+/* Microcopy beneath the submit button — lowers friction */
+.form-note {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+}
+.form-note strong { color: var(--slate); font-weight: 600; }
+
+.form-head { margin-bottom: var(--space-md); }
+.form-title { font-size: 1.4rem; margin-bottom: 0.25rem; }
+.form-sub { color: var(--muted); font-size: 0.95rem; margin: 0; }
+/* Gentle exclusivity — frames the offer as scarce without reading salesy */
+.form-scarcity {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-strong);
+}
+.form-scarcity span { color: var(--accent); font-size: 0.7rem; }
 .field { margin-bottom: var(--space-md); }
 .field-row { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
 .field label {
@@ -496,7 +608,7 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 1rem;
   color: var(--text);
   padding: 0.8rem 0.95rem;
-  background: #fcfbf8;
+  background: #faf8fe;
   border: 1.5px solid var(--line);
   border-radius: var(--radius-sm);
   transition: border-color var(--transition), box-shadow var(--transition);
@@ -553,7 +665,7 @@ p { margin: 0 0 var(--space-sm); }
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 .footer-brand-text { color: #fff; }
-.footer-brand-text .brand-sub { color: var(--accent); }
+.footer-brand-text .brand-sub { color: var(--accent-bright); }
 .footer-tagline { color: rgba(255, 255, 255, 0.6); margin: 0.6rem 0 0; font-size: 0.95rem; }
 .footer-nav {
   display: flex;
@@ -565,7 +677,7 @@ p { margin: 0 0 var(--space-sm); }
   color: rgba(255, 255, 255, 0.78);
   transition: color var(--transition);
 }
-.footer-nav a:hover { color: var(--accent); }
+.footer-nav a:hover { color: var(--accent-bright); }
 
 .footer-bottom {
   display: flex;
