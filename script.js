@@ -8,6 +8,7 @@
      4. Testimonial carousel
      5. Enquiry form: validation + FormSubmit AJAX
      6. Auto-updating footer year
+     7. WhatsApp chat widget (floating launcher + suggestions)
    ============================================================ */
 (function () {
   "use strict";
@@ -136,7 +137,7 @@
     // CHANGE THIS EMAIL to wherever enquiries should be delivered.
     // First submission to a new address triggers a one-time FormSubmit
     // activation email — the form only delivers AFTER you click that link.
-    const ENDPOINT = "https://formsubmit.co/ajax/isaiah.hui@redbeaconam.com";
+    const ENDPOINT = "https://formsubmit.co/ajax/evon.na@redbeaconam.com";
 
     const submitBtn = document.getElementById("submitBtn");
     const formError = document.getElementById("formError");
@@ -237,6 +238,60 @@
           if (input.getAttribute("aria-invalid") === "true") setError(id, "");
         });
       }
+    });
+  })();
+
+  /* ---------- 7. WhatsApp chat widget ---------- */
+  (function whatsappWidget() {
+    const widget = document.getElementById("waWidget");
+    const toggle = document.getElementById("waToggle");
+    const panel = document.getElementById("waPanel");
+    const closeBtn = document.getElementById("waClose");
+    if (!widget || !toggle || !panel) return;
+
+    // ====== Destination WhatsApp number ======
+    // International format, digits only (no "+"). Single source of truth.
+    const WA_NUMBER = "6596983731"; // +65 9698 3731
+    const BASE = "https://wa.me/" + WA_NUMBER;
+
+    // Build wa.me links for every element with a data-msg (chips + start button)
+    widget.querySelectorAll("[data-msg]").forEach(function (el) {
+      const msg = el.getAttribute("data-msg");
+      el.setAttribute("href", BASE + (msg ? "?text=" + encodeURIComponent(msg) : ""));
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    });
+
+    function openPanel() {
+      panel.hidden = false;
+      widget.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+    }
+    function closePanel() {
+      panel.hidden = true;
+      widget.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", function () {
+      if (panel.hidden) openPanel();
+      else closePanel();
+    });
+    if (closeBtn) closeBtn.addEventListener("click", closePanel);
+
+    // After picking a suggestion / starting a chat, close the panel
+    panel.querySelectorAll("[data-msg]").forEach(function (el) {
+      el.addEventListener("click", closePanel);
+    });
+
+    // Close on Escape (and return focus to the launcher)
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) { closePanel(); toggle.focus(); }
+    });
+
+    // Close when clicking anywhere outside the widget
+    document.addEventListener("click", function (e) {
+      if (!panel.hidden && !widget.contains(e.target)) closePanel();
     });
   })();
 

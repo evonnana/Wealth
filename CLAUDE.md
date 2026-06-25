@@ -28,9 +28,9 @@ and ~1280px.
 - `styles.css` — all styling. **Mobile-first**; everything themable lives in `:root` custom
   properties (palette, typography, spacing scale, radius, shadows, `--header-h`, `--container`).
   Three breakpoint blocks: ≥600px, ≥900px, and a ≤760px block that turns the nav into a slide-down panel.
-- `script.js` — all behavior, wrapped in one IIFE. Six self-contained modules: mobile nav toggle,
+- `script.js` — all behavior, wrapped in one IIFE. Seven self-contained modules: mobile nav toggle,
   header-shadow-on-scroll, IntersectionObserver reveal animations, testimonial carousel, enquiry
-  form (validation + submit), and the auto-updating footer year.
+  form (validation + submit), the auto-updating footer year, and the WhatsApp chat widget.
 
 The three files are coupled only by shared `id`/`class` names — there is no module system. When
 adding behavior, find or add an `id` in `index.html`, style by class in `styles.css`, and wire it in
@@ -46,12 +46,17 @@ the relevant module in `script.js`.
   hidden under the navbar.
 - **Carousel** is index-based: a flex track translated by `-index * 100%`. Dots are generated in JS
   from the slide count, so adding/removing `.slide` elements in HTML requires no JS change.
+- **WhatsApp widget** (`.wa-widget`, fixed bottom-right): the destination number lives once as the
+  `WA_NUMBER` constant in the widget module in `script.js`. Every `wa.me` link is built at runtime
+  from that constant plus each element's `data-msg` (URL-encoded prefilled text). To add a suggested
+  query, add an `<a class="wa-chip" data-msg="…">` inside `#waSuggestions` — JS wires the link
+  automatically. To change the number, edit `WA_NUMBER` only.
 
 ## Enquiry form (the one piece with external behavior)
 
 - Submits via **FormSubmit AJAX** (`fetch` POST JSON) so the page never redirects. The destination
   address is the `ENDPOINT` constant at the top of the form module in `script.js` — currently
-  `isaiah.hui@redbeaconam.com`. This is the single place to change the recipient.
+  `evon.na@redbeaconam.com`. This is the single place to change the recipient.
 - FormSubmit requires a **one-time activation**: the first submission to a new address triggers a
   confirmation email; the form only delivers after that link is clicked.
 - The payload includes FormSubmit helper fields (`_subject`, `_template: "table"`, `_captcha: "false"`)

@@ -15,6 +15,8 @@ no dependencies (other than one Google Fonts link).
 - **Services / about** overview with inline SVG icons
 - **Testimonials carousel** — index-based, with auto-generated navigation dots
 - **Enquiry form** with client-side validation, submitted via FormSubmit AJAX (no page redirect)
+- **WhatsApp chat widget** — floating launcher (bottom-right) with suggested-query chips that open
+  WhatsApp with a pre-filled message
 - **Scroll-in reveal animations** using `IntersectionObserver`, honoring `prefers-reduced-motion`
 - **Auto-updating footer year**
 - Fully **responsive**, mobile-first design
@@ -25,7 +27,7 @@ no dependencies (other than one Google Fonts link).
 | ------------ | ------------------------------------------------------------------------------ |
 | `index.html` | Semantic markup for all sections, plus inlined SVG icons                       |
 | `styles.css` | All styling — mobile-first, themable via `:root` custom properties             |
-| `script.js`  | All behavior in one IIFE: nav toggle, scroll effects, carousel, form, footer   |
+| `script.js`  | All behavior in one IIFE: nav toggle, scroll effects, carousel, form, footer, WhatsApp widget |
 
 ## Running locally
 
@@ -50,6 +52,9 @@ publishes the site. Deployment can also be triggered manually from the repo's **
   `:root` block of `styles.css`.
 - **Enquiry recipient:** change the `ENDPOINT` constant at the top of the form module in
   `script.js`. (FormSubmit requires a one-time email activation for new addresses.)
+- **WhatsApp number:** change the `WA_NUMBER` constant in the widget module in `script.js`
+  (international format, digits only). Suggested queries are `<a class="wa-chip" data-msg="…">`
+  elements in `index.html`.
 
 ---
 
