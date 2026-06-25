@@ -6,6 +6,8 @@ no dependencies (other than one Google Fonts link).
 
 🔗 **Live site:** https://evonnana.github.io/Wealth/
 
+![Redbeacon Asset Management — hero section](preview.png)
+
 ## Features
 
 - **Sticky navbar** with a slide-down mobile menu (collapses ≤760px)
